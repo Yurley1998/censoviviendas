@@ -1,0 +1,101 @@
+import streamlit as st
+import requests
+import pandas as pd
+import plotly.express as px
+base="dark"
+backgroundColor="#652e69"
+
+st.set_page_config(layout="wide",
+                   page_icon="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png",
+                   page_title = "Web app Diplomado")
+
+@st.cache
+def cargar_datos(filename: str):
+    return pd.read_csv(filename)
+
+datos = cargar_datos("Cordoba_limpio.csv")
+# Sidebar
+st.sidebar.image("logo-DANE.png")
+st.sidebar.markdown("# Seleccion de estrato, para el departamento de cordoba, en todos los municipios")
+
+st.sidebar.markdown("# Selector de opcion para Grafico 2")
+opcionPie = st.sidebar.selectbox(label="Servicios basicos", 
+                                 options =["descripcion_tipo_vivienda","descripcion_material_pared","descripcion_tipo_servicio_sanitario"])
+st.sidebar.markdown("---")
+OpcE = st.sidebar.number_input("Escoja un estrato", min_value=1, max_value=6)
+st.sidebar.markdown("---")
+st.header("Datos de referencia utilizado para la prediccion de precios")
+st.markdown("---")
+st.write(datos)
+st.markdown("---")
+st.markdown("Figura 1.")
+
+@st.cache
+def graficobarras(datos):
+    
+    fig = px.bar(
+        datos.groupby(["estrato"])
+        .sum()
+        .reset_index()
+        .sort_values(by="total_hogares", ascending=False),
+        color_discrete_sequence=["#B0C4DE","white"],
+        x ="estrato",
+        y ="total_hogares"
+    )
+    return fig
+varfig = graficobarras(datos)
+st.plotly_chart( 
+    varfig , 
+    use_container_width=True,  
+)
+
+st.markdown("---")
+
+st.markdown("# Grafico 2")
+@st.cache
+def pieFig(df,x):
+    sizes = datos[x].value_counts().tolist()
+    labels = datos[x].unique()
+    return [sizes,labels]
+fig = px.pie(datos, 
+             values=pieFig(datos,opcionPie)[0], 
+             names=pieFig(datos,opcionPie)[1], 
+             title='Informacion Adicional del censo realizado para todos los estratos',
+            color_discrete_sequence=px.colors.sequential.RdBu)
+st.plotly_chart(fig)
+st.markdown("---")
+st.write("# Graficas por estrato")
+col1,col2=st.columns(2)
+st.write("## Estrato: ", OpcE)
+st.write("### Descripcion Tipo de vivienda")
+df1 = datos[(datos['estrato'] == OpcE)]
+#@st.cache
+#def pieFig1(df,x):
+#    sizes = df1[x].value_counts().tolist()
+#    labels = df1[x].unique()
+#    return [sizes,labels]
+fig = px.pie(df1, 
+             values='estrato', 
+             names='descripcion_tipo_vivienda',
+             color_discrete_sequence=px.colors.sequential.ice)
+st.plotly_chart(fig)
+st.markdown("---")
+#fig = px.pie(datos,
+#            values='estrato',
+#            names=opcionPie,
+#            color_discrete_sequence=px.colors.sequential.RdBu)
+#st.plotly_chart(fig)
+st.write("### Descripcion materiales de la pared")
+
+fig2 = px.pie(df1, 
+             values='estrato', 
+             names='descripcion_material_pared',
+             color_discrete_sequence=px.colors.sequential.Viridis)
+st.plotly_chart(fig2)
+st.markdown("---")
+st.write("### Descripcion del tipo de servicio sanitario")
+fig2 = px.pie(df1, 
+             values='estrato', 
+             names='descripcion_tipo_servicio_sanitario',
+             color_discrete_sequence=px.colors.sequential.Plasma)
+st.plotly_chart(fig2)
