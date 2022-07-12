@@ -24,7 +24,7 @@ opcionPie = st.sidebar.selectbox(label="Servicios basicos",
 st.sidebar.markdown("---")
 OpcE = st.sidebar.number_input("Escoja un estrato", min_value=1, max_value=6)
 st.sidebar.markdown("---")
-st.header("Datos de referencia utilizado para la prediccion de precios")
+st.header("Datos de referencia utilizado para la prediccion de servicios básicos por estrato ")
 st.markdown("---")
 st.write(datos)
 st.markdown("---")
@@ -60,7 +60,7 @@ def pieFig(df,x):
 fig = px.pie(datos, 
              values=pieFig(datos,opcionPie)[0], 
              names=pieFig(datos,opcionPie)[1], 
-             title='Informacion Adicional del censo realizado para todos los estratos',
+             title='Informacion Adicional del censo realizado  para todos los estrato es',
             color_discrete_sequence=px.colors.sequential.RdBu)
 st.plotly_chart(fig)
 st.markdown("---")
@@ -96,6 +96,6 @@ st.markdown("---")
 st.write("### Descripcion del tipo de servicio sanitario")
 fig2 = px.pie(df1, 
              values='estrato', 
-             names='descripcion_tipo_servicio_sanitario',
+             names='descripcion_tipo_servicio_sanitario',str
              color_discrete_sequence=px.colors.sequential.Plasma)
 st.plotly_chart(fig2)
