@@ -24,7 +24,7 @@ opcionPie = st.sidebar.selectbox(label="Servicios basicos",
 st.sidebar.markdown("---")
 OpcE = st.sidebar.number_input("Escoja un estrato", min_value=1, max_value=6)
 st.sidebar.markdown("---")
-st.header("Datos de referencia utilizado para la prediccion de precios")
+st.header("Datos de referencia utilizado para la prediccion de calidad de vida de los habitantes del departamento de Córdoba en base al acceso de servicios básicos")
 st.markdown("---")
 st.write(datos)
 st.markdown("---")
