@@ -59,14 +59,14 @@ def pieFig(df,x):
 fig = px.pie(datos, 
              values=pieFig(datos,opcionPie)[0], 
              names=pieFig(datos,opcionPie)[1], 
-             title='Informacion Adicional del censo realizado para todos los estratos',
+             title='Información Adicional del censo realizado para todos los estratos',
             color_discrete_sequence=px.colors.sequential.Aggrnyl)
 st.plotly_chart(fig)
 st.markdown("---")
-st.write("# Graficas por estrato")
+st.write("## Gráficas por estrato")
 col1,col2=st.columns(2)
 st.write("## Estrato: ", OpcE)
-st.write("### Descripcion Tipo de vivienda")
+st.write("### Descripción Tipo de vivienda")
 df1 = datos[(datos['estrato'] == OpcE)]
 #@st.cache
 #def pieFig1(df,x):
@@ -84,7 +84,7 @@ st.markdown("---")
 #            names=opcionPie,
 #            color_discrete_sequence=px.colors.sequential.Aggrnyl)
 #st.plotly_chart(fig)
-st.write("### Descripcion materiales de la pared")
+st.write("### Descripción materiales de la pared")
 
 fig2 = px.pie(df1, 
              values='estrato', 
@@ -92,7 +92,7 @@ fig2 = px.pie(df1,
              color_discrete_sequence=px.colors.sequential.Aggrnyl)
 st.plotly_chart(fig2)
 st.markdown("---")
-st.write("### Descripcion del tipo de servicio sanitario")
+st.write("### Descripción del tipo de servicio sanitario")
 fig2 = px.pie(df1, 
              values='estrato', 
              names='descripcion_tipo_servicio_sanitario',
