@@ -37,7 +37,8 @@ def graficobarras(datos):
         .sum()
         .reset_index()
         .sort_values(by="total_hogares", ascending=False),
-        color_discrete_sequence=["#B0C4DE","white"],
+        #color_discrete_sequence=["#B0C4DE","white"],
+        color_discrete_sequence=px.colors.sequential.Aggrnyl,
         x ="estrato",
         y ="total_hogares"
     )
