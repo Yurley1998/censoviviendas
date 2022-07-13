@@ -93,6 +93,7 @@ fig2 = px.pie(df1,
 st.plotly_chart(fig2)
 st.markdown("---")
 st.write("### Descripción del tipo de servicio sanitario")
+st.markdown("Este gr{afico muestra la utilización del servicio básico de acceso a sanitarios dependiendo del estrato")
 fig2 = px.pie(df1, 
              values='estrato', 
              names='descripcion_tipo_servicio_sanitario',
