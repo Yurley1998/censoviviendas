@@ -67,6 +67,7 @@ st.write("## Gráficas por estrato")
 col1,col2=st.columns(2)
 st.write("### Estrato: ", OpcE)
 st.write("### Descripción Tipo de vivienda")
+st.markdown("Este gráfico muestra el tipo de vivienda para cada hogar encuestado del departamento de Córdoba dependiendo del estrato")
 df1 = datos[(datos['estrato'] == OpcE)]
 #@st.cache
 #def pieFig1(df,x):
@@ -85,6 +86,7 @@ st.markdown("---")
 #            color_discrete_sequence=px.colors.sequential.Aggrnyl)
 #st.plotly_chart(fig)
 st.write("### Descripción materiales de la pared")
+st.markdown("Este gráfico muestra los materiales de construcción para los hogares del departamento de Córdoba dependiendo del estrato")
 
 fig2 = px.pie(df1, 
              values='estrato', 
@@ -93,7 +95,7 @@ fig2 = px.pie(df1,
 st.plotly_chart(fig2)
 st.markdown("---")
 st.write("### Descripción del tipo de servicio sanitario")
-st.markdown("Este gr{afico muestra la utilización del servicio básico de acceso a sanitarios dependiendo del estrato")
+st.markdown("Este gráfico muestra el acceso de los hogares del departamento de Córdoba al servicio de acceso a sanitarios dependiendo del estrato")
 fig2 = px.pie(df1, 
              values='estrato', 
              names='descripcion_tipo_servicio_sanitario',
