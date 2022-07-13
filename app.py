@@ -47,6 +47,23 @@ st.plotly_chart(
     varfig , 
     use_container_width=True,  
 )
+def graficobarras1(datos):
+    
+    fig = px.bar(
+        datos.groupby(["estrato"])
+        .sum()
+        .reset_index()
+        .sort_values(by="servicio_internet", ascending=False),
+        color_discrete_sequence=["#86C7BE","white"],
+        x ="estrato",
+        y ="servicio_internet"
+    )
+    return fig
+varfig = graficobarras1(datos)
+st.plotly_chart( 
+    varfig , 
+    use_container_width=True,  
+)
 
 st.markdown("---")
 
