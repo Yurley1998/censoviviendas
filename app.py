@@ -50,7 +50,7 @@ st.plotly_chart(
 
 st.markdown("---")
 
-st.markdown("# Grafico 2")
+st.markdown("## Gráfico 2")
 @st.cache
 def pieFig(df,x):
     sizes = datos[x].value_counts().tolist()
@@ -65,7 +65,7 @@ st.plotly_chart(fig)
 st.markdown("---")
 st.write("## Gráficas por estrato")
 col1,col2=st.columns(2)
-st.write("## Estrato: ", OpcE)
+st.write("### Estrato: ", OpcE)
 st.write("### Descripción Tipo de vivienda")
 df1 = datos[(datos['estrato'] == OpcE)]
 #@st.cache
