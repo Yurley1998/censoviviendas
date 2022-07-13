@@ -21,6 +21,7 @@ st.sidebar.markdown("### Selector de opcion para Grafico 2")
 opcionPie = st.sidebar.selectbox(label="Servicios basicos", 
                                  options =["descripcion_tipo_vivienda","descripcion_material_pared","descripcion_tipo_servicio_sanitario"])
 st.sidebar.markdown("---")
+st.sidebar.markdown("Selección de estrato para el análisis del uso de servicios básicos en el departamento de Córdoba.")
 OpcE = st.sidebar.number_input("Escoja un estrato", min_value=1, max_value=6)
 st.sidebar.markdown("---")
 st.markdown("Datos de referencia utilizados para la predicción de calidad de vida de los habitantes del departamento de Córdoba en base al acceso de servicios básicos")
