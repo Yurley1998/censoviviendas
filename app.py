@@ -17,7 +17,7 @@ datos = cargar_datos("cordoba_limpio.csv")
 # Sidebar
 st.sidebar.image("logo-DANE.png")
 st.sidebar.markdown("##  Selección de estrato para el análisis del uso de servicios básicos en el departamento de Córdoba.")
-st.sidebar.markdown("# Selector de opcion para Grafico 2")
+st.sidebar.markdown("## Selector de opcion para Grafico 2")
 opcionPie = st.sidebar.selectbox(label="Servicios basicos", 
                                  options =["descripcion_tipo_vivienda","descripcion_material_pared","descripcion_tipo_servicio_sanitario"])
 st.sidebar.markdown("---")
