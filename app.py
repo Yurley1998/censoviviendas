@@ -58,7 +58,7 @@ def graficobarras1():
         color= 'medal'
     )
     return fig
-varfig = graficobarras1(datos)
+varfig = graficobarras1()
 st.plotly_chart( 
     varfig , 
     use_container_width=True,  
