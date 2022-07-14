@@ -16,7 +16,8 @@ def cargar_datos(filename: str):
 datos = cargar_datos("cordoba_limpio.csv")
 # Sidebar
 st.sidebar.image("logo-DANE.png")
-st.sidebar.markdown("Estudio realizado para conocer las condiciones de vida de los hogares del departamento de Córdoba.")
+st.sidebar.markdown("<p style='text-align: center; color: red;'>Estudio realizado para conocer las condiciones de vida de los hogares del departamento de Córdoba.</p>", unsafe_allow_html=True)
+#st.sidebar.markdown("Estudio realizado para conocer las condiciones de vida de los hogares del departamento de Córdoba.")
 st.sidebar.markdown("### Selector de opcion para Grafico 2")
 opcionPie = st.sidebar.selectbox(label="Servicios basicos", 
                                  options =["descripcion_tipo_vivienda","descripcion_material_pared","descripcion_tipo_servicio_sanitario"])
