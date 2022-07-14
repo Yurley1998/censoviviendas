@@ -52,7 +52,7 @@ st.plotly_chart(
 def graficobarras1():
     df=px.data.datos()   
     fig = px.bar(
-        datos,  
+        df,  
         x ="estrato",
         y ="servicio_internet",
         color= 'medal'
