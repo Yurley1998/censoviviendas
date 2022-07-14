@@ -49,20 +49,7 @@ st.plotly_chart(
     varfig , 
     use_container_width=True,  
 )
-def graficobarras1():
-    df=px.data.datos()   
-    fig = px.bar(
-        df,  
-        x ="estrato",
-        y ="servicio_internet",
-        color= 'estrato'
-    )
-    return fig
-varfig = graficobarras1()
-st.plotly_chart( 
-    varfig , 
-    use_container_width=True,  
-)
+
 
 st.markdown("---")
 
