@@ -52,7 +52,7 @@ st.plotly_chart(
 def graficobarras1(datos):
     
     fig = px.bar(
-        datos.groupby(["estrato"]),        
+        datos.groupby(["estrato"])        
         color_discrete_sequence=["#86C7BE","white"],
         x ="estrato",
         y ="servicio_internet"
