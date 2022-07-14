@@ -109,5 +109,5 @@ st.write("## Estratos")
 opc = st.selectbox(label="", 
                    options =[1, 2, 3, 4, 5, 6])
 dfe= datos[(datos['estrato']==opc)]
-fig4= px.histogram(dfe, x="servicio_internet", color_discrete_sequence=["#86C7BE"], rwidth=0.70)
+fig4= px.histogram(dfe, x="servicio_internet", color_discrete_sequence=["#86C7BE"], width=0.70)
 st.plotly_chart(fig4)
