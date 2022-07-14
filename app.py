@@ -50,7 +50,7 @@ st.plotly_chart(
     use_container_width=True,  
 )
 def graficobarras1(datos):
-df=px.data.datos()   
+    df=px.data.datos()   
     fig = px.bar(
         datos,  
         x ="estrato",
