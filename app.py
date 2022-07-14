@@ -9,7 +9,7 @@ st.set_page_config(layout="wide",
                    page_icon="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png",
                    page_title = "Web app Diplomado")
 
-@st.cache
+@st.cache(allow_output_mutation=True)
 def cargar_datos(filename: str):
     return pd.read_csv(filename)
 
