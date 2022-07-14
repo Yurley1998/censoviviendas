@@ -104,3 +104,9 @@ fig2 = px.pie(df1,
              names='descripcion_tipo_servicio_sanitario',
              color_discrete_sequence=px.colors.sequential.Aggrnyl)
 st.plotly_chart(fig2)
+st.write("---")
+opc = st.selectbox(label="# ESTRATOS", 
+                                 options =[1, 2, 3, 4, 5, 6])
+dfe= datos[(datos['estrato']==opc)]
+fig4= px.histogram(dfe, x="servicio_internet", color_discrete_sequence=["#86C7BE"])
+st.plotly(fig4)
