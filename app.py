@@ -109,4 +109,4 @@ opc = st.selectbox(label="# ESTRATOS",
                                  options =[1, 2, 3, 4, 5, 6])
 dfe= datos[(datos['estrato']==opc)]
 fig4= px.histogram(dfe, x="servicio_internet", color_discrete_sequence=["#86C7BE"])
-st.plotly(fig4)
+st.plotly_char(fig4)
