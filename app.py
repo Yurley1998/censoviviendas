@@ -55,7 +55,7 @@ def graficobarras1():
         df,  
         x ="estrato",
         y ="servicio_internet",
-        color= 'medal'
+        color= 'estrato'
     )
     return fig
 varfig = graficobarras1()
