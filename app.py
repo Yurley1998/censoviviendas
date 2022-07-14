@@ -49,7 +49,7 @@ st.plotly_chart(
     varfig , 
     use_container_width=True,  
 )
-def graficobarras1(datos):
+def graficobarras1():
     df=px.data.datos()   
     fig = px.bar(
         datos,  
