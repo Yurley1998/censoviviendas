@@ -99,7 +99,7 @@ st.plotly_chart(fig, use_container_width=True)
 #p, c = p_simple(datos, opcionPie, "total_hogares", "municipio")
 #st.plotly_chart(p, use_container_width=True)
 st.markdown("---")
-OpcE = st.selectbox(label = "Estratos",options =[1,2,3,4,5,6])
+OpcE = st.selectbox(label = "Selección de estratos",options =[1,2,3,4,5,6])
 st.write("Estrato: ", OpcE)
 col1,col2=st.columns(2)
 with col1:
