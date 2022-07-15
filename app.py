@@ -40,7 +40,8 @@ def graficobarras(datos):
         color_discrete_sequence=["#B0C4DE","white"],
         x ="estrato",
         y ="total_hogares",
-        title="Gráfico de estrato por hogares"
+        title="Gráfico de estrato por hogares",
+        width=500
     )
     return fig
 varfig = graficobarras(datos)
