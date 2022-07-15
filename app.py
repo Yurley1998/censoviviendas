@@ -13,7 +13,7 @@ st.set_page_config(layout="wide",
 def cargar_datos(filename: str):
     return pd.read_csv(filename)
 
-datos = cargar_datos("Cordoba_limpio.csv")
+datos = cargar_datos("cordoba_limpio.csv")
 # Sidebar
 st.sidebar.image("logo-DANE.png")
 st.sidebar.markdown("# Seleccion de estrato, para el departamento de cordoba, en todos los municipios")
