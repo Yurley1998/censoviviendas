@@ -107,7 +107,7 @@ st.plotly_chart(fig3, use_container_width=True)
 st.write("---")
 
 E = st.selectbox(
-    label = "Estrato", options=[1,2,3,4,5,6])
+    label = "Selección de estrato", options=[1,2,3,4,5,6])
 dfE = datos[(datos['estrato'] == E)]
 fig4 = px.histogram(dfE, x="servicio_internet",color_discrete_sequence=["#86C7BE"])
 st.plotly_chart(fig4,use_container_width=True)
