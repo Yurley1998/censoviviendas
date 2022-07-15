@@ -68,36 +68,6 @@ fig = px.pie(datos,
             color_discrete_sequence=px.colors.sequential.Aggrnyl)
 st.plotly_chart(fig, use_container_width=True)
 
-#def graficobarras(datos,opt):
-    
- #   fig = px.bar(
-       # x = datos([opt]).value_counts().tolist()
-        #.mean()
-        #.reset_index()
-        #.sort_values(by="Consumo_agua", ascending=False),
-        #color_discrete_sequence=["#00EAD3","black"],
-  #      color = opt,
-   #     y ="estrato",
-    #    orientation='h'
-    #)
-    #return fig
-#varfig = graficobarras(datos)
-#gfapilada = px.bar(datos,
-     #              x = "estrato",
-    #               y = datos[opcionPie],
-   #               color = datos[opcionPie], 
-  #                orientation = 'h'
- #                 )
-#st.plotly_chart(gfapilada, use_container_width=True)
-#def p_simple(df: pd.DataFrame, x: pd.DataFrame, y, N_filter: str):
-    #data = df.copy()
-    #data = data[data["municipio"]]
- #   fig = px.histogram(datos, x=x, y=y, color_discrete_sequence=px.colors.sequential.Aggrnyl, color='estrato')
-  #  return fig
-
-
-#p, c = p_simple(datos, opcionPie, "total_hogares", "municipio")
-#st.plotly_chart(p, use_container_width=True)
 st.markdown("---")
 st.markdown("A continuación se muestra el comportamiento de las variables descriptivas de las condiciones de los hogares teniendo en cuenta el estrato seleccionado")
 OpcE = st.selectbox(label = "Selección de estratos",options =[1,2,3,4,5,6])
@@ -121,7 +91,8 @@ with col2:
              values='estrato', 
              names='descripcion_tipo_servicio_sanitario',
              color_discrete_sequence=px.colors.sequential.Aggrnyl,
-             title="Descripción del tipo sanitario")
+             title="Descripción del tipo sanitario",
+             width=400)
     st.plotly_chart(fig3) 
     
 st.markdown("---")
