@@ -16,9 +16,8 @@ def cargar_datos(filename: str):
 datos = cargar_datos("cordoba_limpio.csv")
 # Sidebar
 st.sidebar.image("logo-DANE.png")
-st.sidebar.markdown("# Seleccion de estrato, para el departamento de cordoba, en todos los municipios")
+st.sidebar.markdown("<p style='text-align: justify;'>Estudio realizado para conocer las condiciones de vida de los hogares del departamento de Córdoba.</p>", unsafe_allow_html=True)
 
-st.sidebar.markdown("---")
 
 st.sidebar.markdown("---")
 st.markdown("## Exploración de datos")
