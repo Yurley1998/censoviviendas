@@ -64,8 +64,8 @@ def pieFig(df,x):
 fig = px.pie(datos, 
              values=pieFig(datos,opcionPie)[0], 
              names=pieFig(datos,opcionPie)[1], 
-             title='Informacion Adicional del censo realizado para todos los estratos',
-            color_discrete_sequence=px.colors.sequential.RdBu)
+             title='Estrato vs descripción de hogares',
+            color_discrete_sequence=px.colors.sequential.Aggrnyl)
 st.plotly_chart(fig, use_container_width=True)
 
 #def graficobarras(datos,opt):
