@@ -21,7 +21,7 @@ st.sidebar.markdown("# Seleccion de estrato, para el departamento de cordoba, en
 st.sidebar.markdown("---")
 
 st.sidebar.markdown("---")
-st.header("Exploración de datos")
+st.markdown("## Exploración de datos")
 st.markdown("---")
 st.markdown("<p style='text-align: justify;'>Este proyecto trata de darle una mejor forma de visualización a los datos registrados en el censo nacional realizado por el DANE entidad del estado encargada para estadisticas de nuestro pais, del censo realizado, se tomaron solo datos del departamento de cordoba, para un analisis de nuestra region, algunas de las columnas estudiadas y mostradas en las siguientes graficas son: </p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: justify;'>Descripcion_tipo_vivienda: Contiene los tipos de residencias de cada hogar encuestado.</p>",unsafe_allow_html=True)
@@ -53,7 +53,7 @@ st.plotly_chart(
 
 st.markdown("---")
 
-st.markdown("# Selector de opcion para Grafico 2")
+st.markdown("Selección de estrato para conocer las condiciones de vida de los hogares del departamento de Córdoba.")
 opcionPie = st.selectbox(label="", 
                                  options =["descripcion_tipo_vivienda","descripcion_material_pared","descripcion_tipo_servicio_sanitario"])
 @st.cache
