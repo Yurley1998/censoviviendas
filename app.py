@@ -37,7 +37,7 @@ def graficobarras(datos):
         .sum()
         .reset_index()
         .sort_values(by="total_hogares", ascending=False),
-        color_discrete_sequence=["#B0C4DE","white"],
+        color_discrete_sequence=["#86C7BE","white"],
         x ="estrato",
         y ="total_hogares",
         width=400,
@@ -129,7 +129,7 @@ def pFig(df,x):
     labels = df1[x].unique()
     return [sizes,labels]
 fig3 = px.bar(df1,  x= pFig(df1,"descripcion_material_pared")[1] ,y=pFig(df1,"descripcion_material_pared")[0]  ,color_discrete_sequence=["#86C7BE"],
-              title="TIpo de materiales usados en viviendas y conteo de los mismos por estrato escogido")
+              title="Tipo de materiales usados en viviendas y conteo de los mismos por estrato escogido")
 st.plotly_chart(fig3, use_container_width=True)
 
 st.write("---")
