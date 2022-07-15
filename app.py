@@ -100,28 +100,28 @@ st.plotly_chart(fig, use_container_width=True)
 #st.plotly_chart(p, use_container_width=True)
 st.markdown("---")
 OpcE = st.selectbox(label = "Estratos",options =[1,2,3,4,5,6])
-st.write("# Graficas por estrato")
-st.write("## Estrato: ", OpcE)
+st.markdown("Graficas por estrato")
+st.markdown("### Estrato: ", OpcE)
 col1,col2=st.columns(2)
 with col1:
     
-    st.write("### Descripcion Tipo de vivienda")
     df1 = datos[(datos['estrato'] == OpcE)]
     fig1 = px.pie(df1, 
              values='estrato', 
              names='descripcion_tipo_vivienda',
-             color_discrete_sequence=px.colors.sequential.ice)
+             color_discrete_sequence=px.colors.sequential.Aggrnyl,
+             title="Descripción del tipo vivienda")
 
     st.plotly_chart(fig1,use_container_width=True)
 
 st.markdown("---")
 
 with col2:
-    st.write("### Descripcion del tipo de servicio sanitario")
     fig3 = px.pie(df1, 
              values='estrato', 
              names='descripcion_tipo_servicio_sanitario',
-             color_discrete_sequence=px.colors.sequential.Plasma)
+             color_discrete_sequence=px.colors.sequential.Aggrnyl,
+             title="Descripción del tipo sanitario")
     st.plotly_chart(fig3) 
     
 st.markdown("---")
