@@ -81,9 +81,6 @@ with col1:
              title="Descripción del tipo vivienda")
 
     st.plotly_chart(fig1,use_container_width=True)
-
-st.markdown("---")
-
 with col2:
     fig3 = px.pie(df1, 
              values='estrato', 
@@ -91,8 +88,7 @@ with col2:
              color_discrete_sequence=px.colors.sequential.Aggrnyl,
              title="Descripción del tipo sanitario",
              width=580)
-    st.plotly_chart(fig3) 
-    
+    st.plotly_chart(fig3)     
 st.markdown("---")
 def pFig(df,x):
     sizes = df1[x].value_counts().tolist()
