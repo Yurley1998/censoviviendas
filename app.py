@@ -99,7 +99,7 @@ fig3 = px.bar(df1,  x= pFig(df1,"descripcion_material_pared")[1] ,y=pFig(df1,"de
 st.plotly_chart(fig3, use_container_width=True)
 
 st.write("---")
-
+st.markdown("A continuación se muestra la relación de los hogares de Córdoba que cuentan con acceso al servicio de internet")
 E = st.selectbox(
     label = "Selección de estrato", options=[1,2,3,4,5,6])
 dfE = datos[(datos['estrato'] == E)]
