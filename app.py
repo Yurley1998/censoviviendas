@@ -103,7 +103,7 @@ st.markdown("A continuación se muestra la relación de los hogares de Córdoba 
 E = st.selectbox(
     label = "Selección de estrato", options=[1,2,3,4,5,6])
 dfE = datos[(datos['estrato'] == E)]
-fig4 = px.histogram(dfE, x="servicio_internet",color_discrete_sequence=["#86C7BE"])
+fig4 = px.histogram(dfE, x="servicio_internet",color_discrete_sequence=["#86C7BE"], width=500)
 st.plotly_chart(fig4,use_container_width=True)
 st.write("De la anterior grafica destacamos los siguiente: para entender mejor el valor 1 significa que la residencia cuenta con servicio de internet")
 st.write("el valor 2 significa que NO tiene servicio de internet, y el valor  9 el comodin NO informa.")
