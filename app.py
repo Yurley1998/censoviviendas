@@ -21,16 +21,15 @@ st.sidebar.markdown("# Seleccion de estrato, para el departamento de cordoba, en
 st.sidebar.markdown("---")
 
 st.sidebar.markdown("---")
-st.header("Exploracion de datos")
+st.header("Exploración de datos")
 st.markdown("---")
 st.markdown("<p style='text-align: justify;'>Este proyecto trata de darle una mejor forma de visualización a los datos registrados en el censo nacional realizado por el DANE entidad del estado encargada para estadisticas de nuestro pais, del censo realizado, se tomaron solo datos del departamento de cordoba, para un analisis de nuestra region, algunas de las columnas estudiadas y mostradas en las siguientes graficas son: </p>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: justify;'>Descripcion_tipo_vivienda: Contiene los tipos de lugares que utilizan los cordobeces como residencias.</p>",unsafe_allow_html=True)
+st.markdown("<p style='text-align: justify;'>Descripcion_tipo_vivienda: Contiene los tipos de residencias de cada hogar encuestado.</p>",unsafe_allow_html=True)
 st.markdown("<p style='text-align: justify;'>Descripcion_material_pared: Esta columna contiene los elementos de los que estan contruidas las residencias visitadas.</p>",unsafe_allow_html=True)
 st.markdown("<p style='text-align: justify;'>Descripcion_tipo_servicio_sanitario: En esta columna podemos encontrar el tipo de conexion del servicio sanitario que tiene la residencia o si por el contrario no cuenta con el servicio</p>",unsafe_allow_html=True)
 st.markdown("<p style='text-align: justify;'>Servicio_internet: siendo cordoba una region en desarrollo tecnologico, usar esta columna nos permite ver que tanto ha avanzado la region con respecto a la cobertura de los estratos mas bajos de la region</p>",unsafe_allow_html=True)
 
 st.markdown("---")
-st.markdown("Figura 1.")
 @st.cache
 def graficobarras(datos):
     fig = px.bar(
@@ -41,7 +40,7 @@ def graficobarras(datos):
         color_discrete_sequence=["#B0C4DE","white"],
         x ="estrato",
         y ="total_hogares",
-        title="Estrato por hogares"
+        title="Gráfico de estrato por hogares"
     )
     return fig
 varfig = graficobarras(datos)
