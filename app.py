@@ -41,7 +41,7 @@ def graficobarras(datos):
         x ="estrato",
         y ="total_hogares",
         title="Gráfico de estrato por hogares",
-        width=500
+        width=400
     )
     return fig
 varfig = graficobarras(datos)
