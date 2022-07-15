@@ -92,7 +92,7 @@ with col2:
              names='descripcion_tipo_servicio_sanitario',
              color_discrete_sequence=px.colors.sequential.Aggrnyl,
              title="Descripción del tipo sanitario",
-             width=400)
+             width=700)
     st.plotly_chart(fig3) 
     
 st.markdown("---")
