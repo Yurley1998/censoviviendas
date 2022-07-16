@@ -51,7 +51,7 @@ st.plotly_chart(
 
 st.markdown("---")
 
-st.markdown("Selección de estrato para conocer las condiciones de vida de los hogares del departamento de Córdoba.")
+st.markdown("Selección de variables para conocer las condiciones de vida de los hogares del departamento de Córdoba.")
 opcionPie = st.selectbox(label="", 
                                  options =["descripcion_tipo_vivienda","descripcion_material_pared","descripcion_tipo_servicio_sanitario"])
 @st.cache
@@ -62,7 +62,7 @@ def pieFig(df,x):
 fig = px.pie(datos, 
              values=pieFig(datos,opcionPie)[0], 
              names=pieFig(datos,opcionPie)[1], 
-             title='Estrato vs descripción de hogares',
+             title='Descripción de hogares',
             color_discrete_sequence=px.colors.sequential.Aggrnyl)
 st.plotly_chart(fig, use_container_width=True)
 
